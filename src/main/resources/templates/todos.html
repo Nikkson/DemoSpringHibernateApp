@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo list</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div>
+        <a href="/todo/add">Add todo</a>
+    </div>
+    <div>
+        <ul>
+            <li th:each="todo : ${todos}">
+                <span th:text="${todo.title}">Title</span>
+                <a th:href="@{/todo/edit/{id}(id=${todo.id})}">Edit</a>
+                <a th:href="@{/todo/delete/{id}(id=${todo.id})}">Delete</a>
+                <a th:href="@{/todo/{id}(id=${todo.id})}">Details</a>
+
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
