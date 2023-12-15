@@ -25,5 +25,9 @@ public class TodoService {
     public Todo save(Todo todo){
         return todoRepository.save(todo);
     }
+
+    public void delete(long id){
+        todoRepository.deleteById(id);
+    }
     //save edit delete
 }
